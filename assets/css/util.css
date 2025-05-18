@@ -673,7 +673,7 @@ max-width:250px;
 }
 @media only screen  {
 	.width_100 {
-	min-width: 420px!important;
+	min-width: 410px!important;
 	}
 }
 .dis-grid{

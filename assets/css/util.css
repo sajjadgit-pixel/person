@@ -669,11 +669,11 @@ max-width:250px;
 	width: 95%;
 }
 .width_100 {
-	min-width:1440px;
+	max-width:1440px;
 }
 @media only screen and (max-width:600px)  {
 	.width_100 {
-	width: 450px;
+	min-width:415 ;
 	}
 }
 .dis-grid{

@@ -671,9 +671,9 @@ max-width:250px;
 .width_100 {
 	max-width:1920px;
 }
-@media only screen and (max-width: 410px)  {
+@media only screen and (min-width:600px)  {
 	.width_100 {
-	width: 410px;
+	width: 450px;
 	}
 }
 .dis-grid{

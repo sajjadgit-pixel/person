@@ -627,6 +627,11 @@ max-width:250px;
 .width_50 {
 	width: 50%;
 }
+@media only screen and (max-width:500px)  {
+	.width_50 {
+	width:250px !important;
+	}
+}
 
 .width_55 {
 	width: 250px;

@@ -671,16 +671,16 @@ max-width:250px;
 .width_100 {
 	width:100%;
 }
-@media only screen and (max-width:550px)  {
+@media only screen and (max-width:600px)  {
 	.width_100 {
-	width:420px ;
+	width:420px;
 	}
 }
-@media only screen and (max-width:1920px)  {
+/* @media only screen and (max-width:1920px)  {
 	.width_100 {
 	width:100%;
 	}
-}
+} */
 .dis-grid{
 	display: grid;
 }

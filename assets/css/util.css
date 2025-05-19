@@ -673,7 +673,7 @@ max-width:250px;
 }
 @media only screen and (max-width:600px)  {
 	.width_100 {
-	width:350px !important;
+	width:410dvh !important;
 	}
 }
 /* @media only screen and (max-width:1920px)  {

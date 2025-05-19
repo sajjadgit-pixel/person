@@ -669,11 +669,11 @@ max-width:250px;
 	width: 95%;
 }
 .width_100 {
-width:410px !important;
+width: 100%;
 }
-@media only screen and (max-width:1280px)  {
+@media only screen and (max-width:500px)  {
 	.width_100 {
-	width:1920px !important;
+	width:410px !important;
 	}
 }
 /* @media only screen and (max-width:1920px)  {

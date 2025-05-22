@@ -671,27 +671,24 @@ max-width:250px;
 .width_95 {
 	width: 95%;
 }
-.width_100 {
-max-width:100%;
-height: auto;
-display: block;
-margin: 0 auto;
-}
-@media (max-width:768px) {
-	.width_100{
-	width:100%;
-	}
+.responsive-img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
 }
 
-@media (max-width:480px)  {
-	.width_100 {
-	width:100%;
-	}
+/* موبایل (عمودی) */
+@media (max-width: 576px) {
+    .responsive-img {
+        width: 100%;
+    }
 }
-@media (max-width:1280px)  {
-	.width_100 {
-	max-width: 1280;
-	}
+
+/* تبلت (عمودی) */
+@media (max-width: 768px) {
+    .responsive-img {
+        width: 100%;
+    }
 }
 
 .dis-grid{

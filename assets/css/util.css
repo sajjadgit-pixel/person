@@ -672,24 +672,27 @@ max-width:250px;
 	width: 95%;
 }
 .width_100 {
-max-width:1280px;
+max-width:100%;
+height: auto;
+display: block;
+margin: 0 auto;
 }
-@media only screen and (max-width:600px)  {
+@media (max-width:768px) {
 	.width_100{
-	width:600px;
-	margin: 0 auto;
+	width:100%;
 	}
 }
-/* @media only screen and (max-width:920px)  {
+
+@media (max-width:480px)  {
 	.width_100 {
-	width:800px;
+	width:100%;
 	}
 }
-@media only screen and (max-width:1920px)  {
+@media (max-width:1280px)  {
 	.width_100 {
-	width:1900px;
+	max-width: 1280;
 	}
-} */
+}
 
 .dis-grid{
 	display: grid;

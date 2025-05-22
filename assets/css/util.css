@@ -175,11 +175,7 @@ font-style: normal;
 }
 
 .width_20 {
-	width: 20%;
-}
-
-.width_25 {
-	width: 25%;
+	width:250px;
 }
 
 .width_30 {
@@ -598,7 +594,12 @@ max-width:250px;
 }
 
 .width_25 {
-	width: 25%;
+	width:150px;
+}
+@media only screen and (max-width:600px)  {
+	.width_25 {
+	width:80px !important;
+	}
 }
 
 .width_30 {
@@ -671,18 +672,24 @@ max-width:250px;
 	width: 95%;
 }
 .width_100 {
-width: 100%;
+max-width:1280px;
 }
-@media only screen and (max-width:500px)  {
-	.width_100 {
-	width:450px !important;
+@media only screen and (max-width:600px)  {
+	.width_100{
+	width:400px;
 	}
 }
-/* @media only screen and (max-width:1920px)  {
+/* @media only screen and (max-width:920px)  {
 	.width_100 {
-	width:100%;
+	width:800px;
+	}
+}
+@media only screen and (max-width:1920px)  {
+	.width_100 {
+	width:1900px;
 	}
 } */
+
 .dis-grid{
 	display: grid;
 }

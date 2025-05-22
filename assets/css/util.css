@@ -594,11 +594,11 @@ max-width:250px;
 }
 
 .width_25 {
-	width:150px;
+	width:200px;
 }
 @media only screen and (max-width:600px)  {
 	.width_25 {
-	width:80px !important;
+	width:200px !important;
 	}
 }
 
@@ -676,7 +676,8 @@ max-width:1280px;
 }
 @media only screen and (max-width:600px)  {
 	.width_100{
-	width:400px;
+	width:600px;
+	margin: 0 auto;
 	}
 }
 /* @media only screen and (max-width:920px)  {

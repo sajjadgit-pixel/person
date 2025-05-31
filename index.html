@@ -1,399 +1,746 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Bameri.ir</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-  <link href="assets/css/main2.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/util.css">
-
-  <!-- =======================================================
-  * Template Name: eNno
-  * Template URL: https://bootstrapmade.com/enno-free-simple-bootstrap-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darkfolio | Creative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .custom-context-menu {
+            display: none;
+            position: absolute;
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .custom-context-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .custom-context-menu li {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .custom-context-menu li:hover {
+            background-color: #334155;
+        }
+        
+        .service-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 41, 59, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .contact-input {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            transition: all 0.3s;
+        }
+        
+        .contact-input:focus {
+            border-color: #6366f1;
+            outline: none;
+        }
+        
+        .animate-bounce-slow {
+            animation: bounce-slow 3s infinite;
+        }
+        
+        @keyframes bounce-slow {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
 </head>
-
-<body class="index-page dark-background">
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
- 
- 
-    <div class="container-fluid container-xl position-relative d-flex">
-     
-      <a href="#" class="logo d-flex align-items-center me-auto">
-      
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-       
-        <!-- <h1 class="sitename">eNno</h1> -->
-        <i class="bi bi-sun suny text-white-50"data-aos="fade-up" id="sun"></i>
-        <i class="bi bi-moon mony dis-none text-black-50"data-aos="fade-up" id="mon"></i>
-  
-      </a>
-      
-     
-      <nav id="navmenu" class=" text-center red navmenu">
-        <ul dir="rtl">
-          <li><a href="#hero" class="active">خانه</a></li>
-          <li><a href="#me">درباره من</a></li>
-          <li><a href="#services">خدمات</a></li>
-          <li><a href="#portfolio">نمونه کار</a></li>
-          <li><a href="#contact">تماس با من</a></li>
-          <div class="col-lg-12 col-md-12 col-sm-12">
-
-        
-          </div>
+<body class="min-h-screen">
+    <!-- Custom Right-Click Context Menu -->
+    <div id="contextMenu" class="custom-context-menu">
+        <ul>
+            <li onclick="navigateTo('home')"><i class="fas fa-home mr-2"></i> Home</li>
+            <li onclick="navigateTo('about')"><i class="fas fa-user mr-2"></i> About</li>
+            <li onclick="navigateTo('services')"><i class="fas fa-cog mr-2"></i> Services</li>
+            <li onclick="navigateTo('portfolio')"><i class="fas fa-briefcase mr-2"></i> Portfolio</li>
+            <li onclick="navigateTo('contact')"><i class="fas fa-envelope mr-2"></i> Contact</li>
         </ul>
-        
-        <i class="mobile-nav-toggle d-xl-none bi bi-list" data-aos="fadenone"></i>
-      </nav>
-
-      <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
-
     </div>
-  </header>
 
-  <main class="main container-sm" >
+    <!-- Header -->
+    <header class="bg-slate-900/80 backdrop-blur-md fixed w-full z-50 border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">
+                    <span class="gradient-text">Darkfolio</span>
+                </div>
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#home" class="hover:text-indigo-400 transition">Home</a></li>
+                        <li><a href="#about" class="hover:text-indigo-400 transition">About</a></li>
+                        <li><a href="#services" class="hover:text-indigo-400 transition">Services</a></li>
+                        <li><a href="#portfolio" class="hover:text-indigo-400 transition">Portfolio</a></li>
+                        <li><a href="#contact" class="hover:text-indigo-400 transition">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="md:hidden text-xl" id="mobileMenuButton">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-slate-900/95 z-40 hidden flex items-center justify-center">
+        <button class="absolute top-6 right-6 text-2xl" id="closeMobileMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="text-center space-y-8 text-xl">
+            <li><a href="#home" class="hover:text-indigo-400 transition block py-2">Home</a></li>
+            <li><a href="#about" class="hover:text-indigo-400 transition block py-2">About</a></li>
+            <li><a href="#services" class="hover:text-indigo-400 transition block py-2">Services</a></li>
+            <li><a href="#portfolio" class="hover:text-indigo-400 transition block py-2">Portfolio</a></li>
+            <li><a href="#contact" class="hover:text-indigo-400 transition block py-2">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
-    <section id="hero" class="p-m d-grid text-align-c responsive-img">
-            <!-- <div class=" p-t-40 gradeant-light bord-none w-auto" alt=""></div> -->
-    
-    
-      <img src="assets/img/baner.png" class="d-block w-100" alt="">
-          <!-- <h6 class=" text-center p-2 ">سجاد بامری | طراح و کدنویس دیجیتال</h6> -->
-          <!-- <img src="assets/img/portfolio/me.png" class="width_50" alt=""> -->
-      <div class=" d-grid "data-aos="fade-up"  id="me" >
-         <h1 class=""data-aos="fade-up"> 
-          <img src="assets/img/portfolio/about.png" class="width_25" alt="">
-          <!-- <span class="accent-text">سجاد هستم</span> -->
-        </h1>
-     <br>
-     <!-- cdcdcdc -->
-    
-       
-
-        <p data-aos="fade-up">سلام من سجاد هستم</p>
-        <p data-aos="fade-up" class=" container"> طراح لوگو و رابط کاربری و توسعه دهنده فرانت که عاشق خلق تجربه های دیجیتال منحصربفرد هستم .هر خط کدی که می نویسم  و هر طرحی که خلق میکنم،با  این هدف که کسب و کار شما در دنیای دیجیتال برجسته کنم</p>
-
-        <div class="hero-buttons container text-align-c p-all3">
-          <a href="logat Zaban Takhasosi-.pdf" class=" btn about btn-light bg-white me-0 me-sm-2 mx-1">دانلود رزومه</a>
-          <a href="#portfolio" class=" btn btn-light bg-white me-0 me-sm-2 mx-1">نمونه کار ها</a>
+    <section id="home" class="pt-32 pb-20 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    Hi, I'm <span class="gradient-text">Alex</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-slate-300 mb-6">
+                    Creative <span class="gradient-text">Designer</span> & <span class="gradient-text">Developer</span>
+                </h2>
+                <p class="text-slate-400 mb-8 max-w-lg">
+                    I craft beautiful digital experiences that blend aesthetics with functionality. 
+                    With 5+ years of experience, I help brands establish their online presence.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#portfolio" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition">
+                        View Portfolio
+                    </a>
+                    <a href="#" class="border border-indigo-600 text-indigo-400 hover:bg-indigo-600 hover:text-white px-6 py-3 rounded-lg font-medium transition" id="downloadResume">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center animate-bounce-slow">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                             alt="Profile" 
+                             class="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover border-4 border-slate-800">
+                    </div>
+                    <div class="absolute -bottom-5 -right-5 bg-slate-800 px-4 py-2 rounded-lg shadow-lg">
+                        <span class="text-indigo-400 font-bold">5+ Years</span>
+                        <span class="text-slate-300">Experience</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    
-    </section><!-- /Hero Section -->
+    </section>
 
-
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-slate-800/50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    About <span class="gradient-text">Me</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 rounded-lg overflow-hidden border-2 border-slate-700">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 alt="About" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-slate-900 px-4 py-2 rounded-lg border border-slate-700">
+                            <span class="text-indigo-400 font-bold">Alex Carter</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-bold mb-6">Who am I?</h3>
+                    <p class="text-slate-400 mb-6">
+                        I'm a passionate designer and developer with a strong focus on creating intuitive and visually appealing digital experiences. 
+                        My journey began in graphic design, which evolved into full-stack development as I discovered my love for bringing designs to life.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <h4 class="font-bold text-indigo-400 mb-2">Name:</h4>
+                            <p class="text-slate-300">Alex Carter</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-indigo-400 mb-2">Email:</h4>
+                            <p class="text-slate-300">alex@darkfolio.com</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-indigo-400 mb-2">From:</h4>
+                            <p class="text-slate-300">San Francisco, CA</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-indigo-400 mb-2">Freelance:</h4>
+                            <p class="text-slate-300">Available</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="font-bold text-indigo-400 mb-4">Skills:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-slate-700 px-3 py-1 rounded-full text-sm">UI/UX Design</span>
+                            <span class="bg-slate-700 px-3 py-1 rounded-full text-sm">Web Development</span>
+                            <span class="bg-slate-700 px-3 py-1 rounded-full text-sm">Branding</span>
+                            <span class="bg-slate-700 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                            <span class="bg-slate-700 px-3 py-1 rounded-full text-sm">React</span>
+                            <span class="bg-slate-700 px-3 py-1 rounded-full text-sm">Figma</span>
+                            <span class="bg-slate-700 px-3 py-1 rounded-full text-sm">Photoshop</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition">
+                            Hire Me
+                        </a>
+                        <a href="#" class="border border-indigo-600 text-indigo-400 hover:bg-indigo-600 hover:text-white px-6 py-2 rounded-lg font-medium transition" id="downloadResume2">
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Services Section -->
-    <section id="services" class="services section ">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span>Services</span>
-        <!-- <h2>خدمات من</h2> -->
-        <img src="assets/img/portfolio/experts.png" class=" width_25" alt="">
-      
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-    <!-- tage -->
-    <div class=" dir-rtl container p-2 aos-init aos-animate">
-      <h5>Tags</h5>
-      <h6 class="tag">Html5</h6>
-      <h6 class="tag">CSS</h6>
-      <h6 class="tag">Javascript</h6>
-      <h6 class="tag">alpine.js</h6>
-      <h6 class="tag">Vue.js</h6>
-      <h6 class="tag">Bootstrap</h6>
-      <h6 class="tag">Front-end</h6>
-      <h6 class="tag">Graphic-Desgin</h6>
-      <h6 class="tag">UI-UX</h6>
-      <h6 class="tag">Photshop</h6>
-      <h6 class="tag">adobeXD</h6>
-      <h6 class="tag">git</h6>
-      <h6 class="tag">vscode</h6>
-           </div>
-       <!-- end-tage -->
-          <div class="col-lg-4 col-md-6 rounded-1 " data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative rounded-3 ">
+    <section id="services" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    My <span class="gradient-text">Services</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
+            </div>
             
-                <img src="assets/img/portfolio/logo.png" class="width_25" alt="">
-              <a href="service-details.html" class=" stretched-link">
-               
-              </a>
-              <p>طراحی لوگو های ماندگار که هویت برند شما رو میسازن</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6  " data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative rounded-3">
-           
-             
-              
-              <a href="service-details.html" class="stretched-link container">
-                <img src="assets/img/portfolio/ui.png" class=" width_25" alt="">
-              </a>
-              <p>خلق رابط های کاربری زیبا و کاربردی که تجربه کاربردی رو لذت بخش تر میکنن</p>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-4 col-md-6  " data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative rounded-3">
-          
-              <img src="assets/img/portfolio/code.png" class=" width_25" alt="">
-              <a href="service-details.html" class="stretched-link">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card p-8 rounded-xl border border-slate-700">
+                    <div class="text-indigo-400 text-4xl mb-6">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Logo & Branding</h3>
+                    <p class="text-slate-400 mb-6">
+                        Crafting unique visual identities that communicate your brand's essence and values through memorable logos and cohesive branding systems.
+                    </p>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
                 
-              </a>
-              <p>توسعه وبسایت های مدرن و واکنش گرا با کد های تمیزو بهینه</p>
+                <!-- Service 2 -->
+                <div class="service-card p-8 rounded-xl border border-slate-700">
+                    <div class="text-indigo-400 text-4xl mb-6">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">UI/UX Design</h3>
+                    <p class="text-slate-400 mb-6">
+                        Designing intuitive user interfaces and seamless user experiences that engage visitors and drive conversions through thoughtful interaction design.
+                    </p>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card p-8 rounded-xl border border-slate-700">
+                    <div class="text-indigo-400 text-4xl mb-6">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Web Development</h3>
+                    <p class="text-slate-400 mb-6">
+                        Building fast, responsive, and accessible websites using modern technologies like React, Next.js, and Tailwind CSS for optimal performance.
+                    </p>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card p-8 rounded-xl border border-slate-700">
+                    <div class="text-indigo-400 text-4xl mb-6">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Mobile App Design</h3>
+                    <p class="text-slate-400 mb-6">
+                        Creating beautiful and functional mobile app interfaces with a focus on usability and platform-specific design patterns.
+                    </p>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card p-8 rounded-xl border border-slate-700">
+                    <div class="text-indigo-400 text-4xl mb-6">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">SEO Optimization</h3>
+                    <p class="text-slate-400 mb-6">
+                        Improving your website's visibility in search engines through technical optimizations, content strategy, and performance enhancements.
+                    </p>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card p-8 rounded-xl border border-slate-700">
+                    <div class="text-indigo-400 text-4xl mb-6">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Consulting</h3>
+                    <p class="text-slate-400 mb-6">
+                        Providing expert advice on digital strategy, design systems, and technology stack selection to help your business grow online.
+                    </p>
+                    <a href="#" class="text-indigo-400 hover:text-indigo-300 font-medium flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
-          </div><!-- End Service Item -->
-
-        <!-- End Service Item -->
-
         </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
+    </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span>Portfolio</span>
-        <!-- <h2>نمونه کار ها</h2> -->
-        <img src="assets/img/portfolio/پورتفولیو.png" class="" alt="">
-        <p>اینجا مجموعه ای از بهترین کار هام رو گردآوری کردم،از طراحی لوگومینیمال تا رابط های کاربری وبسایت های مدرن</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">همه</li>
-            <li data-filter=".filter-app">Ui</li>
-            <li data-filter=".filter-product">لوگو</li>
-          </ul><!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/portfolio/portolio_mobile.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/mokup-pc-and-mobile.png" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/tirak.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/tirak.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-
-  
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/diko.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/icu.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
+    <section id="portfolio" class="py-20 px-6 bg-slate-800/50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    My <span class="gradient-text">Portfolio</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
+            </div>
             
-
-          
-
-
-          
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/portfolio/garden.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="assets/img/portfolio/logo.png" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-        
-
-          </div><!-- End Portfolio Container -->
-
+            <div class="mb-8 flex justify-center">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg border border-slate-700 bg-slate-800 text-white">
+                        All
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-slate-700 bg-slate-800 text-slate-300">
+                        Design
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border border-slate-700 bg-slate-800 text-slate-300 rounded-r-lg">
+                        Development
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
+                         alt="Portfolio 1" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Website</h3>
+                        <p class="text-slate-300 mb-4 px-4 text-center">Full-stack development with React and Node.js</p>
+                        <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" 
+                         alt="Portfolio 2" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-xl font-bold mb-2">Mobile App UI</h3>
+                        <p class="text-slate-300 mb-4 px-4 text-center">Fitness tracking application design</p>
+                        <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1136&q=80" 
+                         alt="Portfolio 3" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-xl font-bold mb-2">Brand Identity</h3>
+                        <p class="text-slate-300 mb-4 px-4 text-center">Logo and branding for a coffee shop</p>
+                        <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80" 
+                         alt="Portfolio 4" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-xl font-bold mb-2">Dashboard UI</h3>
+                        <p class="text-slate-300 mb-4 px-4 text-center">Analytics dashboard for SaaS product</p>
+                        <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Portfolio 5" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-xl font-bold mb-2">Web Application</h3>
+                        <p class="text-slate-300 mb-4 px-4 text-center">Project management tool with team collaboration</p>
+                        <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Portfolio 6" 
+                         class="w-full h-64 object-cover">
+                    <div class="portfolio-overlay">
+                        <h3 class="text-xl font-bold mb-2">Marketing Website</h3>
+                        <p class="text-slate-300 mb-4 px-4 text-center">High-conversion landing page for startup</p>
+                        <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="border border-indigo-600 text-indigo-400 hover:bg-indigo-600 hover:text-white px-6 py-3 rounded-lg font-medium transition inline-block">
+                    View All Projects
+                </a>
+            </div>
         </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
+    </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span>Section Title</span>
-        <!-- <h2>تماس با من</h2> -->
-        <img src="assets/img/portfolio/Shape-1-copy-4.png" class=" width_25" alt="">
-        <p>بیا پروژه تو با هم شروع کنیم!</p>
-      </div><!-- End Section Title -->
-
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer dir-rtl">
-
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-
- 
-
-        <div class="col-lg-8 col-md-12 col-sm-12">
-          <div class="info-box aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
-         
-            <div class="info-item aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon-box">
-              </div>
-              <div class="content">
-                <!-- <h4>Our Location</h4> -->
-                <!-- <p>A108 Adam Street</p>
-                <p>New York, NY 535022</p> -->
-              </div>
+    <section id="contact" class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Get In <span class="gradient-text">Touch</span>
+                </h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto"></div>
             </div>
-
-            <div class="info-item aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon-box">
-              </div>
-              <div class="content">
-                <h4>شماره تماس</h4>
-                <p>09924480687</p>
-                <p>09305900742</p>
-              </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <p class="text-slate-400 mb-8">
+                        Feel free to reach out to me for project inquiries, collaborations, or just to say hello. 
+                        I'll get back to you as soon as possible.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 text-xl mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Location</h4>
+                                <p class="text-slate-400">San Francisco, CA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 text-xl mr-4 mt-1">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <p class="text-slate-400">alex@darkfolio.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 text-xl mr-4 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Phone</h4>
+                                <p class="text-slate-400">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-indigo-400 text-xl mr-4 mt-1">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Working Hours</h4>
+                                <p class="text-slate-400">Mon-Fri: 9AM - 5PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold mb-4">Follow Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-indigo-400 hover:bg-indigo-600 hover:text-white transition">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg contact-input" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2">Your Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg contact-input" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 rounded-lg contact-input" placeholder="Project Inquiry">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg contact-input" placeholder="Hello Alex, I'd like to discuss..."></textarea>
+                        </div>
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition w-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
             </div>
-
-            <div class="info-item aos-init aos-animate" data-aos="fade-up" data-aos-delay="500">
-              <div class="icon-box">
-              </div>
-              <div class="content">
-                <h4>آدرس ایمیل</h4>
-                <p>mohandessajad48@gmail.com</p>
-              </div>
-            </div>
-            <div class="info-item aos-init aos-animate" data-aos="fade-up" data-aos-delay="500">
-              <div class="icon-box">
-              </div>
-              <div class="content">
-                <h4>ساعات کاری</h4>
-                <p>شنبه تا پنجشنبه</p>
-                <p>9 صبح تا 6عصر</p>
-                <p class="">پروژه های فوری هم میتونی خارج از این ساعات هماهنگ کنی</b>
-              </div>
-            </div>
-          </div>
         </div>
+    </section>
 
-        <div class="col-lg-4 col-md-12 col-sm-12">
-          <p>با من در فضای مجازی در ارتباط باش</p>
-          <div class=" d-grid">
-            <a href=""><i class=" bi bi-telegram"></i><span class=" p-all">t.me/sajjad_ui</span></a>
-            <a href="https://github.com/sajjadgit-pixel/website-sajjad"><i class=" bi bi-github"></i><span class=" p-all">github/me</span></a>
-            <a href=""><i class="  bi bi-behance"><a href="https://www.behance.net/mohandessajad" class=" p-all">www.behabce.com/me</span></i></a>
-            <!-- <a href=""><i class="  bi bi-instagram"></i></a> -->
-            <!-- <a href=""><i class="  bi bi-linkedin"></i></a> -->
-          </div>
+    <!-- Footer -->
+    <footer class="py-12 px-6 bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-2xl font-bold mb-6 md:mb-0">
+                    <span class="gradient-text">Darkfolio</span>
+                </div>
+                <div class="text-slate-400 mb-6 md:mb-0">
+                    © 2023 Alex Carter. All rights reserved.
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                        <i class="fab fa-dribbble"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="text-slate-400 hover:text-indigo-400 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
         </div>
+    </footer>
 
-      </div>
-    </div>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white shadow-lg transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">github</strong> <span></span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-       طراحی و توسعه توسط سجاد بامری 👌 ساخته شده با بوت ستراپ❤- 2025
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-<script src="assets/js/main.js"></script>
-
-
+    <script>
+        // Right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            
+            const contextMenu = document.getElementById('contextMenu');
+            contextMenu.style.display = 'block';
+            
+            // Position the menu
+            const x = e.clientX;
+            const y = e.clientY;
+            
+            // Ensure menu stays within viewport
+            const menuWidth = contextMenu.offsetWidth;
+            const menuHeight = contextMenu.offsetHeight;
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            
+            if (x + menuWidth > windowWidth) {
+                contextMenu.style.left = (windowWidth - menuWidth) + 'px';
+            } else {
+                contextMenu.style.left = x + 'px';
+            }
+            
+            if (y + menuHeight > windowHeight) {
+                contextMenu.style.top = (windowHeight - menuHeight) + 'px';
+            } else {
+                contextMenu.style.top = y + 'px';
+            }
+        });
+        
+        // Close context menu when clicking elsewhere
+        document.addEventListener('click', function() {
+            document.getElementById('contextMenu').style.display = 'none';
+        });
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+        
+        document.getElementById('closeMobileMenu').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+        
+        // Download CV button
+        document.getElementById('downloadResume').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Downloading resume...');
+            // In a real implementation, this would trigger a file download
+        });
+        
+        document.getElementById('downloadResume2').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Downloading resume...');
+            // In a real implementation, this would trigger a file download
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Navigation function for context menu
+        function navigateTo(section) {
+            document.getElementById('contextMenu').style.display = 'none';
+            
+            const targetElement = document.getElementById(section);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
 </body>
-
 </html>
